@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    #myImage{
+      transition: top 8s, left 8s;
+    }
+    </style>
+  </head>
+  <body>
+    <img id="myImage" style="position:absolute; top:10px; left:10px" src='https://www.wizard.financial/static/media/wizaart-img.56787174.gif' width="200px" height="200px"/>
+    <div>
+    </div>
+
+    <script>
+
+      document.addEventListener("click", myFunction);
+
+function myFunction(event) {
+  const img = document.getElementById("myImage");
+
+
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+
+  const x = event.clientX;
+  const y = event.clientY;
+
+
+if(x > parseInt(getComputedStyle(img).left)){
+img.style.transform = 'scaleX(-1)';
+}else {
+img.style.transform = 'scaleX(1)';
+
+}
+  img.style.top = y+'px';
+  img.style.left = x+'px';
+}
+    </script>
+  </body>
+</html>
